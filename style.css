@@ -81,3 +81,22 @@ body,.nav nav,.project,.project-card{background-color:var(--bg)}
 .project-card:hover .card-visual::after{opacity:.28;transform:translateY(0)}
 @media(max-width:760px){.hero-art{height:300px}.ascii-wave{width:100%;height:130px;top:145px;opacity:.08}.ascii-center-mark{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.stack-groups>div>span::after{animation:none;opacity:1}.card-visual::after{transition:none}}
+
+
+/* COSMIC ASCII FIELD — replaces the old demo-like character sphere */
+.hero-art{height:430px;position:relative;isolation:isolate;overflow:visible;background:radial-gradient(ellipse at 50% 52%,rgba(210,213,218,.045),transparent 64%)}
+.hero-art .ascii-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block;filter:drop-shadow(0 0 9px rgba(255,255,255,.1));pointer-events:none}
+.hero-art::before{content:"";position:absolute;z-index:0;left:50%;top:51%;width:91%;height:43%;border:1px solid rgba(220,224,230,.16);border-radius:50%;transform:translate(-50%,-50%) rotate(21deg);pointer-events:none}
+.hero-art::after{content:"";position:absolute;z-index:0;left:50%;top:51%;width:73%;height:75%;border:1px dashed rgba(220,224,230,.09);border-radius:50%;transform:translate(-50%,-50%) rotate(-39deg);pointer-events:none}
+.cosmic-tag{position:absolute;z-index:3;top:12px;right:8px;color:#999;font-size:8px;letter-spacing:.18em}
+.hero-art .art-label{z-index:3;color:#a9a9a9;letter-spacing:.12em;text-shadow:0 1px 8px #000}
+.hero-art .label-a{top:44px;left:2px}
+.hero-art .label-b{bottom:64px;right:3px;text-align:right}
+.hero-art .art-index{z-index:3;bottom:8px;left:12px;color:#777;letter-spacing:.16em}
+.cosmic-cross{position:absolute;z-index:3;right:15%;top:19%;font:20px var(--mono);color:#dedede;opacity:.62;animation:cosmic-pulse 4.8s ease-in-out infinite}
+@keyframes cosmic-pulse{0%,100%{opacity:.25;transform:scale(.85) rotate(0)}50%{opacity:.8;transform:scale(1.08) rotate(45deg)}}
+.ascii-center-mark,.ascii-wave{display:none!important}
+.card-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.8) .7px,transparent .9px);background-size:6px 6px;opacity:0;transition:opacity .3s ease}
+.project-card:hover .card-visual::after{opacity:.12}
+@media(max-width:760px){.hero-art{height:320px;margin-top:12px}.hero-art::before{width:98%;height:42%}.hero-art::after{width:78%;height:72%}.cosmic-tag{top:0;right:0;font-size:7px}.hero-art .label-a{top:28px}.hero-art .label-b{bottom:45px}.hero-art .art-index{bottom:0}.cosmic-cross{right:11%;top:14%}}
+@media(prefers-reduced-motion:reduce){.cosmic-cross{animation:none;opacity:.5}.card-visual::after{transition:none}}
