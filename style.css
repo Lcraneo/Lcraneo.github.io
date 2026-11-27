@@ -100,3 +100,9 @@ body,.nav nav,.project,.project-card{background-color:var(--bg)}
 .project-card:hover .card-visual::after{opacity:.12}
 @media(max-width:760px){.hero-art{height:320px;margin-top:12px}.hero-art::before{width:98%;height:42%}.hero-art::after{width:78%;height:72%}.cosmic-tag{top:0;right:0;font-size:7px}.hero-art .label-a{top:28px}.hero-art .label-b{bottom:45px}.hero-art .art-index{bottom:0}.cosmic-cross{right:11%;top:14%}}
 @media(prefers-reduced-motion:reduce){.cosmic-cross{animation:none;opacity:.5}.card-visual::after{transition:none}}
+
+
+/* COSMIC INTERACTION CUES — preserves the existing orbital artwork */
+.hero-art{cursor:crosshair;touch-action:pan-y}
+.hero-art .art-index{font-size:8px;letter-spacing:.09em}
+@media(max-width:760px){.hero-art .art-index{font-size:7px;letter-spacing:.035em}}
